@@ -1,0 +1,136 @@
+% beamerouterthemekth.sty
+\ProvidesPackage{beamerouterthemekth}
+
+% Use the custom color theme
+\usepackage{beamercolorthemekth}
+
+% Customize headline (top of the slides)
+% \setbeamertemplate{headline}
+% {
+%     \leavevmode%
+%     \hbox{
+%         % Logo on the top left
+%         % \begin{beamercolorbox}[wd=1cm,ht=1cm,dp=0cm,leftskip=.3cm plus1fill,rightskip=.3cm]{}
+%         \includegraphics[width=4em]{KTH_logo_RGB_svart} % Specify the path to your logo
+%         % \end{beamercolorbox}%
+%         % Section name in the center
+%         \usebeamerfont{section in head/foot}test
+%     }
+%     \vskip0pt%
+% }
+
+
+\setbeamertemplate{navigation symbols}{}
+
+% Customize footline (bottom of the slides)
+\setbeamertemplate{footline}
+{
+    \leavevmode%
+    
+    \hfill%
+    \raisebox{-1pt}{%
+    \insertslidenavigationsymbol%
+    \insertframenavigationsymbol%
+    \insertsubsectionnavigationsymbol%
+    \insertsectionnavigationsymbol%
+    \insertdocnavigationsymbol%
+    \insertbackfindforwardnavigationsymbol}%
+    \hspace*{2em}\insertframenumber/\inserttotalframenumber\hspace*{0.5cm}
+    \vskip1ex%
+}
+
+% Customize sidebar
+\setbeamertemplate{sidebar left}
+{
+
+    \vspace{1em}\hspace{1em}%
+    \includegraphics[width=6em]{KTH_logo_RGB_svart}%
+}
+
+\setbeamertemplate{sidebar right}
+{
+}
+
+% Customize title page
+\setbeamertemplate{title page}
+{
+    % Set background color for the title page
+    \begin{beamercolorbox}[wd=\paperwidth,ht=\paperheight]{titlepagebg}
+        % Add TikZ picture in the background
+        \begin{tikzpicture}[remember picture, overlay]
+            % Draw some lines or shapes
+            \draw[thick, color=navy] (current page.west) -- ++(1.5,3) --++(-1.5,0);
+            \draw[thick, color=navy] (current page.west) ++(0,1.5) -- ++(2,0) to[out=0, in=-90]++(1.5,1.5) coordinate (a) -- (a |- current page.north);
+            \draw[thick, color=navy] (current page.south east) ++ (0,2) --++(-3,0) to[out=180, in=90]++(-1.5,-1.5) coordinate (b) -- (b |- current page.south);
+            \draw[thick, color=navy] (current page.north east) ++ (-3,0) to[out=-90, in=180]++(3,-3);
+            \draw[thick, color=navy] (current page.north east) ++ (0,-1) --++(-5,0) to[out=-90, in=180]++(1,-1) --++ (0,2);
+        \end{tikzpicture}
+        \vbox to \paperheight{
+            \vskip2cm % Adjust to position the logo vertically
+
+            % Insert the logo
+            \begin{center}
+                \includegraphics[width=6em]{KTH_logo_RGB_vit} % Specify the path to your logo
+            \end{center}
+
+            \vskip1em % Adjust spacing between logo and title
+
+            % Insert title in bold font and white
+            \begin{center}
+                %color
+                \usebeamerfont{title}\usebeamercolor[fg]{title}
+                \textbf\inserttitle\par
+                \vskip0.5em
+                \ifx\insertsubtitle\@empty\else\usebeamerfont{subtitle}\insertsubtitle\par\fi
+            \end{center}
+
+            \vfill
+
+            % Insert author and date at the bottom if needed
+            \begin{center}
+                \usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\par
+                \vskip0.5em
+                \usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate\vspace*{2em}
+            \end{center}
+        }
+    \end{beamercolorbox}
+}
+
+\setbeamertemplate{headline}
+{
+}
+
+% Customize frametitle
+\setbeamertemplate{frametitle}
+{
+    \leavevmode%
+    \hspace*{3em}
+    \vspace*{2em}
+    \ifx\insertframesubtitle\@empty%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=4ex,dp=0ex]{frametitle}
+        \usebeamerfont{frametitle}\textbf\insertframetitle
+    \end{beamercolorbox}
+    \else
+    \begin{beamercolorbox}[wd=\paperwidth,ht=5ex,dp=0ex]{frametitle}
+        \usebeamerfont{frametitle}\textbf\insertframetitle\par
+        \usebeamerfont{framesubtitle}\insertframesubtitle
+    \end{beamercolorbox}
+    \fi
+}
+
+% Customize framesubtitle
+
+\setbeamertemplate{background}
+{
+    \begin{tikzpicture}
+        % \draw [thick, light_grey] (current page.south west) -- (current page.north east);
+            \draw[thick, color=light_grey] (current page.west)++(0,-1) -- ++(1.5,4) --++(-1.5,0);
+            \draw[thick, color=light_grey] (current page.west) ++(0,1.5) -- ++(2,0) to[out=0, in=-90]++(1.5,1.5) coordinate (a) -- (a |- current page.north);
+            \draw[thick, color=light_grey] (current page.south east) ++ (0,2) --++(-3,0) to[out=180, in=90]++(-1.5,-1.5) coordinate (b) -- (b |- current page.south);
+            \draw[thick, color=light_grey] (current page.north east) ++ (-3,0) to[out=-90, in=180]++(3,-3);
+            \draw[thick, color=light_grey] (current page.north east) ++ (0,-1) --++(-5,0) to[out=-90, in=180]++(1,-1) --++ (0,2);
+    \end{tikzpicture}
+}
+% Customize navigation symbols
+\setbeamertemplate{navigation symbols}{}
+

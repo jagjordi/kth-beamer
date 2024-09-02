@@ -1,0 +1,121 @@
+% beamerinnerthemekth.sty
+\ProvidesPackage{beamerinnerthemekth}
+
+% Use the custom color theme
+\usepackage{beamercolorthemekth}
+
+% Customize itemize and enumerate
+\setbeamertemplate{itemize item}[circle]
+\setbeamertemplate{itemize subitem}[triangle]
+\setbeamertemplate{itemize subsubitem}[dash]
+
+\setbeamertemplate{enumerate item}[default]
+\setbeamertemplate{enumerate subitem}[default]
+\setbeamertemplate{enumerate subsubitem}[default]
+
+% Customize blocks
+\setbeamertemplate{block begin}
+{
+    \begin{beamercolorbox}[colsep*=1ex,rounded=true,shadow=true]{block title}
+    \usebeamerfont*{block title}\insertblocktitle\par
+    \end{beamercolorbox}
+    {\parskip0pt\par}
+    \begin{beamercolorbox}[colsep*=1ex,vmode]{block body}
+    \usebeamerfont*{block body}
+}
+\setbeamertemplate{block end}
+{
+    \end{beamercolorbox}
+    {\parskip0pt\par}
+}
+
+% Customize alerted blocks
+\setbeamertemplate{alerted begin}
+{
+    \begin{beamercolorbox}[colsep*=1ex,rounded=true,shadow=true]{block title alerted}
+    \usebeamerfont*{block title alerted}\insertblocktitle\par
+    \end{beamercolorbox}
+    {\parskip0pt\par}
+    \begin{beamercolorbox}[colsep*=1ex,vmode]{block body alerted}
+    \usebeamerfont*{block body alerted}
+}
+\setbeamertemplate{alerted end}
+{
+    \end{beamercolorbox}
+    {\parskip0pt\par}
+}
+
+% Customize example blocks
+\setbeamertemplate{example begin}
+{
+    \begin{beamercolorbox}[colsep*=1ex,rounded=true,shadow=true]{block title example}
+    \usebeamerfont*{block title example}\insertblocktitle\par
+    \end{beamercolorbox}
+    {\parskip0pt\par}
+    \begin{beamercolorbox}[colsep*=1ex,vmode]{block body example}
+    \usebeamerfont*{block body example}
+}
+\setbeamertemplate{example end}
+{
+    \end{beamercolorbox}
+    {\parskip0pt\par}
+}
+
+% Customize footnotes
+\setbeamertemplate{footnote}
+{
+    \parindent 1em\noindent%
+    \raggedright%
+    \usebeamercolor{footnote}\hbox to 1.8em{\hfil\usebeamertemplate*{footnote mark}\hfil}\insertfootnotetext\par%
+}
+
+% Customize navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% Customize the title page
+\setbeamertemplate{title page}
+{
+    \vbox{}
+    \vskip 1em
+    \begin{centering}
+        \begin{beamercolorbox}[sep=8pt,center]{title}
+            \usebeamerfont{title}\inserttitle\par
+            \ifx\insertsubtitle\@empty\else\usebeamerfont{subtitle}\insertsubtitle\par\fi
+        \end{beamercolorbox}
+        \vskip 1em
+        \begin{beamercolorbox}[sep=8pt,center]{author}
+            \usebeamerfont{author}\insertauthor
+        \end{beamercolorbox}
+        \begin{beamercolorbox}[sep=8pt,center]{institute}
+            \usebeamerfont{institute}\insertinstitute
+        \end{beamercolorbox}
+        \begin{beamercolorbox}[sep=8pt,center]{date}
+            \usebeamerfont{date}\insertdate
+        \end{beamercolorbox}
+    \end{centering}
+    \vskip 1em
+}
+
+% Customize the frametitle
+\setbeamertemplate{frametitle}
+{
+    \begin{beamercolorbox}[ht=2.5ex,dp=1ex,leftskip=1ex,rightskip=1ex]{frametitle}
+        \usebeamerfont{frametitle}\insertframetitle
+    \end{beamercolorbox}
+}
+
+% Customize the footline
+\setbeamertemplate{footline}
+{
+    \leavevmode%
+    \hbox{
+        \begin{beamercolorbox}[wd=.9\paperwidth,ht=2.5ex,dp=1ex,leftskip=.3cm plus1fill,rightskip=.3cm]{author in head/foot}
+            \usebeamerfont{author in head/foot}\insertshortauthor
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.1\paperwidth,ht=2.5ex,dp=1ex,center]{title in head/foot}
+            \usebeamerfont{title in head/foot}\insertframenumber{}
+        \end{beamercolorbox}}%
+    \vskip0pt%
+}
+
+
